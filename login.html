@@ -1,57 +1,114 @@
 <!DOCTYPE html>
-<html lang="en">
-<!DOCTYPE html>
 
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login - Digital Burnout System</title>
-  <link rel="stylesheet" href="login.css">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login - Vibe Reset</title>
+
+<link rel="stylesheet" href="login.css">
+
 </head>
 
 <body>
 
 <div class="login-container">
-  <div class="login-box">
 
-```
+<div class="login-box">
+
 <h2>Login</h2>
 
 <form id="login-form">
 
-  <div class="input-group">
-    <label for="username">Username</label>
-    <input type="text" id="username" placeholder="Enter your username" required>
-  </div>
+<div class="input-group">
+<label>Username</label>
+<input type="text" id="username" placeholder="Enter username">
+</div>
 
-  <div class="input-group">
-    <label for="password">Password</label>
-    <input type="password" id="password" placeholder="Enter your password" required>
-  </div>
+<div class="input-group">
+<label>Password</label>
+<input type="password" id="password" placeholder="Enter password">
+</div>
 
-  <button type="submit" class="login-btn">Login</button>
+<button type="submit" class="login-btn">Login</button>
 
 </form>
 
 <hr>
 
-<!-- Google Sign In Button -->
-<button id="googleSignInBtn" class="google-btn">
-  Continue with Google
-</button>
+<button id="google-login">Continue with Google</button>
 
-<p class="signup-link">
-  Don't have an account? <a href="#">Sign Up</a>
-</p>
-```
-
-  </div>
 </div>
 
-<script src="login.js"></script>
+</div>
+
+<script type="module">
+
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+import { getAuth, GoogleAuthProvider, signInWithPopup } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-auth.js";
+
+
+const firebaseConfig = {
+
+apiKey: "AIzaSyB63PivCuZxP0cot_QUSBInNxzWVy4aLKA",
+authDomain: "vibereset-496dfa.firebaseapp.com",
+projectId: "vibereset-496dfa",
+storageBucket: "vibereset-496dfa.firebasestorage.app",
+messagingSenderId: "851266079273",
+appId: "1:851266079273:web:6a340e6d256f0b60a1aa38"
+
+};
+
+const app = initializeApp(firebaseConfig);
+const auth = getAuth(app);
+const provider = new GoogleAuthProvider();
+
+
+document.getElementById("google-login").onclick = async () => {
+
+try {
+
+const result = await signInWithPopup(auth, provider);
+
+const user = result.user;
+
+localStorage.setItem("userName", user.displayName);
+localStorage.setItem("userPhoto", user.photoURL);
+
+window.location.href = "dashboard.html";
+
+}
+
+catch(error){
+
+console.error(error);
+
+}
+
+};
+
+
+document.getElementById("login-form").addEventListener("submit", function(e){
+
+e.preventDefault();
+
+const username = document.getElementById("username").value;
+
+if(!username){
+alert("Enter username");
+return;
+}
+
+localStorage.setItem("userName", username);
+
+window.location.href = "dashboard.html";
+
+});
+
+</script>
 
 </body>
-</html>
-
 </html>

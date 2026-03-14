@@ -1,12 +1,13 @@
-
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Vibe Reset</title>
 
+<title>Vibe Reset</title>
 
 <link rel="stylesheet" href="style.css">
 
@@ -15,6 +16,7 @@
 </head>
 
 <body>
+
 <nav class="navbar">
 
 <a href="index.html" class="logo">Vibe Reset</a>
@@ -22,35 +24,37 @@
 <div class="nav-links">
 
 <div class="dropdown">
-  
+
 <button class="dropbtn">Useful Links ▼</button>
+
 <div class="dropdown-content">
-<a href="burnout.html">What's the Problem?</a>
-<a href="burnout.html#patterns">Burnout Patterns</a>
-<a href="burnout.html#stats">Statistics / Facts</a>
- <a href="login.html">Login</a>
-</div>
+
+<a href="burnout.html">What's the Problem?</a> <a href="burnout.html#patterns">Burnout Patterns</a> <a href="burnout.html#stats">Statistics / Facts</a> <a href="login.html">Login</a>
+
 </div>
 
-<!-- Simple link button -->
+</div>
+
 <a href="dashboard.html" class="nav-pill">Dashboard</a>
 
 <a href="team.html" class="nav-pill">About Us</a>
 
 </div>
 
-</nav> 
+</nav>
+
 <section class="hero">
+
 <div class="hero-text">
 
 <h1>Reset Your Focus</h1>
 
 <p>
 An intelligent system that detects digital burnout and restores
-attention using real‑time micro recovery actions.
+attention using real-time micro recovery actions.
 </p>
 
-<button id="explore-btn" onclick="scrollToPrototype()">Explore the creation</button>
+<button onclick="scrollToPrototype()">Explore the creation</button>
 
 </div>
 
@@ -61,12 +65,12 @@ attention using real‑time micro recovery actions.
 <h2>The Problem</h2>
 
 <p class="section-text">
-Modern digital life is filled with distractions. Constant app
-switching, notifications and long screen exposure reduce focus and
-cause digital burnout.
 
-Most tools only track screen time but they don't help users recover
-attention.
+Modern digital life is filled with distractions. Constant app switching,
+notifications and long screen exposure reduce focus and cause digital burnout.
+
+Most tools only track screen time but they don't help users recover attention.
+
 </p>
 
 </section>
@@ -84,7 +88,7 @@ attention.
 
 <div class="feature">
 <h3>Attention Score</h3>
-<p>Calculates a real‑time burnout score.</p>
+<p>Calculates a real-time burnout score.</p>
 </div>
 
 <div class="feature">
@@ -132,7 +136,7 @@ attention.
 
 <p>See how Vibe Reset detects burnout and helps recover focus.</p>
 
-<button id="explore-btn" onclick="scrollToPrototype()">launch demo</button>
+<button onclick="scrollToPrototype()">Launch Demo</button>
 
 </section>
 
@@ -143,29 +147,6 @@ attention.
 </footer>
 
 <script src="script.js"></script>
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
-  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
 
-  // Your web app's Firebase configuration
-  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-  const firebaseConfig = {
-    apiKey: "AIzaSyB63PivCuZxP0cot_QUSBInNxzWVy4aLKA",
-    authDomain: "vibereset-496dfa.firebaseapp.com",
-    projectId: "vibereset-496dfa",
-    storageBucket: "vibereset-496dfa.firebasestorage.app",
-    messagingSenderId: "851266079273",
-    appId: "1:851266079273:web:6a340e6d256f0b60a1aa38",
-    measurementId: "G-2P00JN08M0"
-  };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
-  const analytics = getAnalytics(app);
-</script>
 </body>
 </html>
-

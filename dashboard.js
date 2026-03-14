@@ -4,7 +4,7 @@ const name = localStorage.getItem("userName");
 const photo = localStorage.getItem("userPhoto");
 
 if (!name) {
-  window.location.href = "index.html";
+  window.location.href = "login.html";
 }
 
 document.addEventListener("DOMContentLoaded", () => {
