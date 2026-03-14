@@ -1,57 +1,99 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<link rel="stylesheet" href="dashboard.css">
-<script src="/dashboard.js" defer></script>
-</head>
-<body>
-<body>
-    
 
-  <!-- Navbar / Header -->
-  <header class="dashboard-header">
-  <a href="index.html" class="vibereset-logo">VibeReset</a>
-  <h2>My Digital Dashboard</h2>
+<title>VibeReset Dashboard</title>
+
+<link rel="stylesheet" href="dashboard.css">
+
+<!-- Dashboard Script -->
+
+<script src="dashboard.js" defer></script>
+
+</head>
+
+<body>
+
+<!-- Header / Navbar -->
+
+<header class="dashboard-header">
+
+<a href="index.html" class="vibereset-logo">VibeReset</a>
+
+<h2>My Digital Dashboard</h2>
+
+<div class="user-section">
+<img id="userPhoto" class="user-photo" alt="User Photo">
+<span id="welcomeText">Welcome!</span>
+<button id="logoutBtn">Logout</button>
+</div>
+
 </header>
 
-  <!-- Main content -->
-  <main class="dashboard-main">
-    <!-- Welcome / Greeting -->
-    <section class="welcome">
-      <h2>Welcome, User!</h2>
-      <p>Here's your digital wellbeing overview:</p>
-     <div class="suggestions-container">
-  <h3>Suggestions for you</h3>
-  <div class="suggestions"></div>
-</div>
-    </section>
+<!-- Main Dashboard Content -->
 
-    <!-- Digital Wellbeing Card -->
-    <div class="digital-wellbeing">
-      <h3>Digital Wellbeing</h3>
-      <div class="app-usage">
-        <div class="app">
-          <span class="app-name">YouTube</span>
-          <span class="app-time">2h 30m</span>
-        </div>
-        <div class="app">
-          <span class="app-name">Instagram</span>
-          <span class="app-time">1h 15m</span>
-        </div>
-        <div class="app">
-          <span class="app-name">WhatsApp</span>
-          <span class="app-time">45m</span>
-        </div>
-        <div class="app">
-          <span class="app-name">Other Apps</span>
-          <span class="app-time">1h 10m</span>
-        </div>
-      </div>
-      <p class="note">*This data is approximate and for demo purposes.</p>
-    </div>
-  </main>
-  <script src="dashboard.js" defer></script>
+<main class="dashboard-main">
+
+<!-- Welcome Section -->
+
+<section class="welcome">
+
+<h2 id="welcomeMessage">Welcome!</h2>
+
+<p>Here's your digital wellbeing overview:</p>
+
+<div class="suggestions-container">
+
+<h3>Suggestions for you</h3>
+
+<div class="suggestions"></div>
+
+</div>
+
+</section>
+
+<!-- Digital Wellbeing Card -->
+
+<div class="digital-wellbeing">
+
+<h3>Digital Wellbeing</h3>
+
+<div class="app-usage">
+
+<div class="app">
+<span class="app-name">YouTube</span>
+<span class="app-time">2h 30m</span>
+</div>
+
+<div class="app">
+<span class="app-name">Instagram</span>
+<span class="app-time">1h 15m</span>
+</div>
+
+<div class="app">
+<span class="app-name">WhatsApp</span>
+<span class="app-time">45m</span>
+</div>
+
+<div class="app">
+<span class="app-name">Other Apps</span>
+<span class="app-time">1h 10m</span>
+</div>
+
+</div>
+
+<p class="note">
+*This data is approximate and for demo purposes.
+</p>
+
+</div>
+
+</main>
+
 </body>
+
 </html>

@@ -1,3 +1,23 @@
+// ===== USER LOGIN CHECK =====
+
+const name = localStorage.getItem("userName");
+const photo = localStorage.getItem("userPhoto");
+
+if (!name) {
+  window.location.href = "index.html";
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+
+  const welcomeText = document.getElementById("welcomeText");
+  const welcomeMessage = document.getElementById("welcomeMessage");
+  const userPhoto = document.getElementById("userPhoto");
+
+  if (welcomeText) welcomeText.innerText = name;
+  if (welcomeMessage) welcomeMessage.innerText = "Welcome, " + name + "!";
+  if (userPhoto && photo) userPhoto.src = photo;
+
+});
 // dashboard.js
 
 // Example app usage (can change values to simulate)
@@ -124,3 +144,16 @@ function displaySuggestions(suggestions) {
     container.appendChild(div);
   });
 }
+
+// ===== LOGOUT BUTTON =====
+
+document.addEventListener("DOMContentLoaded", () => {
+  const logoutBtn = document.getElementById("logoutBtn");
+
+  if (logoutBtn) {
+    logoutBtn.onclick = () => {
+      localStorage.clear();
+      window.location.href = "index.html";
+    };
+  }
+});
