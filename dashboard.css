@@ -1,0 +1,93 @@
+/* Dashboard layout */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f0f2f5;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background-color: #007bff;
+  color: white;
+}
+
+.dashboard-header .logo {
+  height: 50px;
+}
+
+.dashboard-header nav a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.dashboard-main {
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.welcome {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Digital Wellbeing Card */
+.digital-wellbeing {
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  width: 400px;
+  text-align: left;
+}
+
+.digital-wellbeing h3 {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.app-usage .app {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.app-usage .app:last-child {
+  border-bottom: none;
+}
+.suggestions-container {
+  margin-top: 30px;
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 12px;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+}
+
+.suggestion {
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+  font-weight: 500;
+  color: #333;
+}
+
+.suggestion:last-child {
+  border-bottom: none;
+}
+.vibereset-logo {
+  height: 50px;       /* Adjust the size */
+  cursor: pointer;    /* Shows clickable hand */
+  vertical-align: middle;
+  margin-right: 15px; /* Space between logo and heading */
+  color: #333;
+  text-decoration: none;
+}
