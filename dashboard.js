@@ -1,7 +1,13 @@
 // ===== USER LOGIN CHECK =====
 
-const name = localStorage.getItem("userName");
+const dashboardUrl = new URL(window.location.href);
+const redirectedName = dashboardUrl.searchParams.get("userName");
+const name = redirectedName || localStorage.getItem("userName");
 const photo = localStorage.getItem("userPhoto");
+
+if (redirectedName) {
+  localStorage.setItem("userName", redirectedName);
+}
 
 if (!name) {
   window.location.href = "login.html";
@@ -78,6 +84,10 @@ window.addEventListener("load", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const updateBtn = document.getElementById("update-btn");
 
+  if (!updateBtn) {
+    return;
+  }
+
   // Initialize with 0 minutes
   updateSuggestions({ youtube: 0, instagram: 0, whatsapp: 0 });
 
@@ -95,9 +105,13 @@ document.addEventListener("DOMContentLoaded", () => {
 // Function to update card and suggestions
 function updateSuggestions(usage) {
   // Update Digital Wellbeing card
-  document.getElementById("youtube-time").innerText = usage.youtube + " min";
-  document.getElementById("instagram-time").innerText = usage.instagram + " min";
-  document.getElementById("whatsapp-time").innerText = usage.whatsapp + " min";
+  const youtubeTime = document.getElementById("youtube-time");
+  const instagramTime = document.getElementById("instagram-time");
+  const whatsappTime = document.getElementById("whatsapp-time");
+
+  if (youtubeTime) youtubeTime.innerText = usage.youtube + " min";
+  if (instagramTime) instagramTime.innerText = usage.instagram + " min";
+  if (whatsappTime) whatsappTime.innerText = usage.whatsapp + " min";
 
   // Create array for rule checking
   const usageArray = [
