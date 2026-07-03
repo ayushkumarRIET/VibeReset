@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vibe Reset - Reset Your Focus</title>
+    
+    <!-- Unified Typography: Inter for a clean, professional tech aesthetic -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2 family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Link to updated CSS location -->
+    <link rel="stylesheet" href="../public/css/style.css">
+    
+    <!-- Lucide Icons Library -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+    <!-- Nav Bar -->
+    <nav class="navbar">
+        <div class="logo-area">
+            <i data-lucide="sparkles" class="logo-icon"></i>
+            <a href="index.html" class="logo">Vibe Reset</a>
+        </div>
+        
+        <div class="nav-links">
+            <div class="dropdown">
+                <button class="dropbtn">Useful Links <i data-lucide="chevron-down" class="inline-icon"></i></button>
+                <div class="dropdown-content">
+                    <a href="burnout.html">What's the Problem?</a>
+                    <a href="burnout.html#patterns">Burnout Patterns</a>
+                    <a href="burnout.html#stats">Statistics / Facts</a>
+                    <a href="login.html">Login</a>
+                </div>
+            </div>
+            <a href="dashboard.html" class="nav-pill">Dashboard</a>
+            <a href="team.html" class="nav-pill">About Us</a>
+        </div>
+    </nav>
+
+    <!-- Hero Showcase Section -->
+    <header class="hero">
+        <div class="hero-glass-card">
+            <h1>Reset Your Focus</h1>
+            <p>An intelligent system that detects digital burnout and restores attention using real-time micro recovery actions.</p>
+            <div class="hero-buttons">
+                <button class="btn-primary" onclick="scrollToPrototype()">
+                    Explore creation <i data-lucide="arrow-right" class="btn-icon"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Grid Wrapper -->
+    <main class="landing-container">
+        
+        <!-- Problem Section -->
+        <section id="problem" class="glass-section">
+            <h2>The Problem</h2>
+            <p class="section-text">
+                Modern digital life is filled with distractions. Constant app switching, notifications, and long screen exposure reduce focus and cause digital burnout. Most tools only track screen time—they don't help users actively recover their attention.
+            </p>
+        </section>
+
+        <!-- Solution Section -->
+        <section id="solution" class="glass-section grid-section">
+            <h2>Our Solution</h2>
+            <div class="features-grid">
+                <div class="feature-glass-box">
+                    <div class="feature-icon-wrapper"><i data-lucide="scan-eye"></i></div>
+                    <h3>Burnout Detection</h3>
+                    <p>Analyzes screen time and task switching patterns instantly.</p>
+                </div>
+                <div class="feature-glass-box">
+                    <div class="feature-icon-wrapper"><i data-lucide="gauge"></i></div>
+                    <h3>Attention Score</h3>
+                    <p>Calculates a real-time burnout metric based on focus indicators.</p>
+                </div>
+                <div class="feature-glass-box">
+                    <div class="feature-icon-wrapper"><i data-lucide="heart-pulse"></i></div>
+                    <h3>Recovery Actions</h3>
+                    <p>Suggests prompt breathing intervals, breaks, and systematic focus resets.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Process Section -->
+        <section id="how" class="glass-section">
+            <h2>How Vibe Reset Works</h2>
+            <div class="steps-flow">
+                <div class="step-card">
+                    <div class="step-num">01</div>
+                    <p>Track activity patterns</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">02</div>
+                    <p>Analyze burnout indicators</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">03</div>
+                    <p>Calculate burnout score</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-num">04</div>
+                    <p>Suggest recovery actions</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Prototype Call To Action -->
+        <section id="prototype" class="glass-section prototype-cta">
+            <h2>Try the Prototype</h2>
+            <p>See firsthand how Vibe Reset blocks out ambient digital burnout vectors and stabilizes focus levels seamlessly.</p>
+            <button class="btn-accent" onclick="window.location.href='dashboard.html'">
+                Launch System Demo <i data-lucide="rocket" class="btn-icon"></i>
+            </button>
+        </section>
+
+    </main>
+
+    <!-- Global Footer -->
+    <footer class="landing-footer">
+        <p>Vibe Reset &bull; Hackathon Prototype</p>
+    </footer>
+
+    <!-- Script connection -->
+    <script src="../public/js/script.js"></script>
+    <script>
+        // Init Lucide Icons graphics
+        lucide.createIcons();
+    </script>
+</body>
+</html>

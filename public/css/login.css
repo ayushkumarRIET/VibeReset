@@ -1,0 +1,190 @@
+/* ==========================================
+   GLASSMORPHISM LOGIN THEME
+   ========================================== */
+:root {
+  --bg-main: #060913;          /* Dark deep space slate */
+  --card-bg: rgba(255, 255, 255, 0.03); 
+  --card-border: rgba(255, 255, 255, 0.08);
+  --text-main: #f3f4f6;        /* Crisp bright white text */
+  --text-muted: #9ca3af;       /* Dimmed description text */
+  --accent-vibe: #a78bfa;      /* Vibrant purple identity accent */
+  --accent-glow: rgba(167, 139, 250, 0.2);
+  --radius-smooth: 16px;
+  --transition-fast: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-main);
+  /* Matching background orbs to create the depth needed for glassmorphism */
+  background-image: 
+    radial-gradient(at 20% 20%, rgba(139, 92, 246, 0.12) 0px, transparent 50%),
+    radial-gradient(at 80% 80%, rgba(16, 185, 129, 0.08) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+.login-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Re-engineered High-Fidelity Glass Box */
+.glass-panel {
+  width: 100%;
+  max-width: 420px;
+  background: var(--card-bg);
+  backdrop-filter: blur(24px) saturate(160%);
+  -webkit-backdrop-filter: blur(24px) saturate(160%);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-smooth);
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+}
+
+.login-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.brand-badge {
+  display: inline-flex;
+  padding: 10px;
+  border-radius: 12px;
+  background: rgba(167, 139, 250, 0.1);
+  color: var(--accent-vibe);
+  margin-bottom: 15px;
+}
+
+.badge-icon {
+  width: 24px;
+  height: 24px;
+}
+
+.login-header h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+}
+
+.login-header p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* Form inputs & containers */
+.input-group {
+  margin-bottom: 24px;
+}
+
+.input-group label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 8px;
+  color: var(--text-muted);
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: 14px;
+  width: 18px;
+  height: 18px;
+  color: var(--text-muted);
+  transition: var(--transition-fast);
+}
+
+.input-wrapper input {
+  width: 100%;
+  padding: 12px 14px 12px 42px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--card-border);
+  border-radius: 10px;
+  color: var(--text-main);
+  font-family: inherit;
+  font-size: 0.95rem;
+  outline: none;
+  transition: var(--transition-fast);
+}
+
+/* Translucent active input fields */
+.input-wrapper input:focus {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: var(--accent-vibe);
+  box-shadow: 0 0 0 4px var(--accent-glow);
+}
+
+.input-wrapper input:focus + .input-icon {
+  color: var(--accent-vibe);
+}
+
+/* Interactive Submit Button */
+.login-btn {
+  width: 100%;
+  background: var(--accent-vibe);
+  color: #060913;
+  border: none;
+  padding: 14px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  border-radius: 10px;
+  cursor: pointer;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 15px rgba(167, 139, 250, 0.25);
+  transition: var(--transition-fast);
+}
+
+.login-btn:hover {
+  transform: translateY(-1px);
+  background: #bda8ff;
+  box-shadow: 0 6px 20px rgba(167, 139, 250, 0.4);
+}
+
+.btn-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Footer & Back Navigation Link */
+.login-footer {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid var(--card-border);
+  text-align: center;
+}
+
+.back-link {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: var(--transition-fast);
+}
+
+.back-link:hover {
+  color: var(--text-main);
+}
+
+.inline-icon {
+  width: 14px;
+  height: 14px;
+}

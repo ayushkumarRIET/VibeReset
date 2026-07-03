@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VibeReset Dashboard</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="../public/css/dashboard.css">
+    
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <script src="../public/js/dashboard.js" defer></script>
+</head>
+<body>
+
+    <header class="dashboard-header">
+        <div class="logo-area">
+            <i data-lucide="sparkles" class="logo-icon"></i>
+            <a href="/index.html" class="vibereset-logo">VibeReset</a>
+        </div>
+        
+        <h2>My Digital Dashboard</h2>
+        
+        <div class="user-section">
+            <img id="userPhoto" class="user-photo" alt="User Photo" src="/assets/default-user.png">
+            <span id="welcomeText">Welcome!</span>
+            <button id="logoutBtn" class="btn-logout">
+                <i data-lucide="log-out"></i> Logout
+            </button>
+        </div>
+    </header>
+
+    <main class="dashboard-grid">
+        
+        <div class="main-column">
+            <section class="dashboard-card welcome-card">
+                <div class="welcome-header">
+                    <h2 id="welcomeMessage">Welcome Back!</h2>
+                    <p>Here's your digital wellbeing overview for today.</p>
+                </div>
+                
+                <div class="mood-checkin">
+                    <h4>How is your vibe right now?</h4>
+                    <div class="mood-slider-container">
+                        <i data-lucide="frown" class="mood-icon bad"></i>
+                        <input type="range" min="1" max="5" value="3" class="mood-slider" id="moodSlider">
+                        <i data-lucide="smile" class="mood-icon good"></i>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dashboard-card suggestions-card">
+                <div class="card-header">
+                    <i data-lucide="compass" class="header-icon"></i>
+                    <h3>Suggestions for you</h3>
+                </div>
+                <div class="suggestions-container">
+                    <div class="suggestions" id="suggestionsBox">
+                        <div class="suggestion-item">
+                            <i data-lucide="wind"></i>
+                            <p>You've spent 2+ hours on screen-heavy apps. Time for a 5-minute breathing break.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <aside class="sidebar-column">
+            <div class="dashboard-card wellbeing-card">
+                <div class="card-header">
+                    <i data-lucide="activity" class="header-icon"></i>
+                    <h3>Digital Wellbeing</h3>
+                </div>
+                
+                <div class="app-usage">
+                    <div class="app-item">
+                        <div class="app-info">
+                            <i data-lucide="youtube" class="icon-youtube"></i>
+                            <span class="app-name">YouTube</span>
+                        </div>
+                        <span class="app-time highlight">2h 30m</span>
+                    </div>
+
+                    <div class="app-item">
+                        <div class="app-info">
+                            <i data-lucide="instagram" class="icon-instagram"></i>
+                            <span class="app-name">Instagram</span>
+                        </div>
+                        <span class="app-time warning">1h 15m</span>
+                    </div>
+
+                    <div class="app-item">
+                        <div class="app-info">
+                            <i data-lucide="message-square" class="icon-whatsapp"></i>
+                            <span class="app-name">WhatsApp</span>
+                        </div>
+                        <span class="app-time">45m</span>
+                    </div>
+
+                    <div class="app-item">
+                        <div class="app-info">
+                            <i data-lucide="layout-grid" class="icon-other"></i>
+                            <span class="app-name">Other Apps</span>
+                        </div>
+                        <span class="app-time">1h 10m</span>
+                    </div>
+                </div>
+
+                <p class="note">
+                    <i data-lucide="info" class="info-inline"></i> This data is approximate and for demo purposes.
+                </p>
+            </div>
+        </aside>
+
+    </main>
+
+    <script>
+        // Renders all the Lucide SVGs cleanly onto the page
+        lucide.createIcons();
+    </script>
+</body>
+</html>

@@ -1,0 +1,334 @@
+/* =================================*********
+   DESIGN SYSTEM VARIABLES
+   ========================================= */
+:root {
+  --bg-main: #060913; /* Deep cosmic dark space */
+  /* Re-engineered frosted glass configuration */
+  --card-bg: rgba(255, 255, 255, 0.04); 
+  --card-border: rgba(255, 255, 255, 0.09);
+  --text-main: #f3f4f6;
+  --text-muted: #9ca3af;
+  --accent-vibe: #a78bfa; /* Slightly brighter for dark contrast */
+  --radius-smooth: 16px;
+  --transition-fast: all 0.2s ease;
+}
+
+/* =================================*********
+   BASE STYLES & LAYOUT
+   ========================================= */
+body {
+  margin: 0;
+  font-family: 'Inter', Arial, sans-serif;
+  background-color: var(--bg-main);
+  /* 1. Added colorful ambient blur orbs behind the dashboard */
+  background-image: 
+    radial-gradient(at 10% 20%, rgba(139, 92, 246, 0.15) 0px, transparent 50%),
+    radial-gradient(at 90% 80%, rgba(16, 185, 129, 0.1) 0px, transparent 50%);
+  background-attachment: fixed;
+  color: var(--text-main);
+  min-height: 100vh;
+}
+
+/* =================================*********
+   HEADER & NAVIGATION
+   ========================================= */
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 40px;
+  background: rgba(11, 15, 25, 0.8);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--card-border);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-icon {
+  color: var(--accent-vibe);
+  animation: float 3s ease-in-out infinite;
+}
+
+.vibereset-logo {
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: var(--text-main);
+  text-decoration: none;
+  background: linear-gradient(45deg, #ffffff, var(--accent-vibe));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.dashboard-header h2 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.user-photo {
+  height: 38px;
+  width: 38px;
+  border-radius: 50%;
+  border: 2px solid var(--accent-vibe);
+  object-fit: cover;
+}
+
+#welcomeText {
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.btn-logout {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--accent-danger);
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  transition: var(--transition-fast);
+}
+
+.btn-logout:hover {
+  background: var(--accent-danger);
+  color: white;
+}
+
+/* =================================*********
+   DASHBOARD GRID SYSTEM
+   ========================================= */
+.dashboard-grid {
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  display: grid;
+  grid-template-columns: 1.6fr 1fr;
+  gap: 30px;
+}
+
+@media (max-width: 900px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.main-column, .sidebar-column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* Reusable Glassmorphic Card base */
+.dashboard-card {
+  background: var(--card-bg);
+  /* The engine of glassmorphism: high blur factor */
+  backdrop-filter: blur(20px) saturate(160%);
+  -webkit-backdrop-filter: blur(20px) saturate(160%);
+  
+  /* Crisp, thin border that acts as a glass reflection edge */
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-smooth);
+  padding: 30px;
+  
+  /* Deep shadow with a hint of dark color to lift the pane off the wallpaper */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.4);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid var(--card-border);
+  padding-bottom: 15px;
+}
+
+.card-header h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.header-icon {
+  color: var(--accent-vibe);
+}
+
+/* =================================*********
+   WELCOME CARD & MOOD SLIDER
+   ========================================= */
+.welcome-card h2 {
+  margin: 0 0 8px 0;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.welcome-card p {
+  margin: 0;
+  color: var(--text-muted);
+}
+
+.mood-checkin {
+  margin-top: 25px;
+  padding-top: 20px;
+  border-top: 1px solid var(--card-border);
+}
+
+.mood-checkin h4 {
+  margin: 0 0 15px 0;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-muted);
+}
+
+.mood-slider-container {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.mood-icon {
+  width: 20px;
+  height: 20px;
+}
+.mood-icon.bad { color: var(--accent-danger); }
+.mood-icon.good { color: var(--accent-success); }
+
+.mood-slider {
+  flex-grow: 1;
+  appearance: none;
+  -webkit-appearance: none;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 3px;
+  outline: none;
+}
+
+.mood-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--accent-vibe);
+  cursor: pointer;
+  transition: transform 0.1s ease;
+}
+
+.mood-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+/* =================================*********
+   DIGITAL WELLBEING & SUGGESTIONS
+   ========================================= */
+.app-usage {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.app-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  transition: var(--transition-fast);
+}
+
+.app-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.app-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.app-info i {
+  width: 18px;
+  height: 18px;
+}
+
+.icon-youtube { color: #ff0000; }
+.icon-instagram { color: #e1306c; }
+.icon-whatsapp { color: #25d366; }
+.icon-other { color: var(--text-muted); }
+
+.app-time {
+  font-family: monospace;
+  font-weight: 600;
+  font-size: 0.95rem;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+/* Conditional App highlight warning states */
+.app-time.highlight { color: var(--accent-danger); background: rgba(239, 68, 68, 0.1); }
+.app-time.warning { color: var(--accent-warning); background: rgba(245, 158, 11, 0.1); }
+
+/* Suggestion Container */
+.suggestion-item {
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+  background: rgba(139, 92, 246, 0.08);
+  border: 1px solid rgba(139, 92, 246, 0.2);
+  padding: 16px;
+  border-radius: 12px;
+}
+
+.suggestion-item i {
+  color: var(--accent-vibe);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.suggestion-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #e2e8f0;
+}
+
+.note {
+  margin-top: 20px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.info-inline {
+  width: 14px;
+  height: 14px;
+}
+
+/* Animation Framework */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
